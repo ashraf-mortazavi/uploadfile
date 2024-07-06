@@ -1,0 +1,7 @@
+@CsvFileUploadApp_HostAddress = http://localhost:5000
+
+POST {{CsvFileUploadApp_HostAddress}}/api/Csv/upload/
+Accept: application/json
+
+
+###
