@@ -1,4 +1,7 @@
 using System.Reflection;
+using CsvFileUploadApp.Api.Extensions.Middleware;
+using CsvFileUploadApp.Infrastructure.Extentions.DependencyInjections;
+using CsvFileUploadApp.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +13,9 @@ public class Startup(IConfiguration configuration)
 
     public  void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+        services.AddFilePersistence(configuration);
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
         services.AddControllers();
-        services.AddCsvFilePublishServices(configuration);
     }
 
     public  void Configure(IApplicationBuilder app, IWebHostEnvironment env)
