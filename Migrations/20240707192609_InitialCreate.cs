@@ -12,7 +12,7 @@ namespace CsvFileUploadApp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Files",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -31,12 +31,12 @@ namespace CsvFileUploadApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Files", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Code",
-                table: "Users",
+                name: "IX_Files_Code",
+                table: "Files",
                 column: "Code",
                 unique: true);
         }
@@ -45,7 +45,7 @@ namespace CsvFileUploadApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Files");
         }
     }
 }

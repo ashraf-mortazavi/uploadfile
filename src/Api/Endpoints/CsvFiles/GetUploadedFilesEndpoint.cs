@@ -1,4 +1,4 @@
-using CsvFileUploadApp.Api.Endpoints.Extensions;
+using CsvFileUploadApp.Api.Extensions.Endpoint;
 using CsvFileUploadApp.Application.CsvFiles.GetFiles;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +10,7 @@ namespace CsvFileUploadApp.Api.Endpoints.CsvFiles;
 public class GetUploadedFilesEndpoint(IMediator mediator) : ControllerBase
 {
     
-    [HttpGet("{code}")]
+    [HttpGet( "{code?}")]
     public async Task<IActionResult> GetUploadedFiles([FromRoute] long? code)
     {
         if (code.HasValue)

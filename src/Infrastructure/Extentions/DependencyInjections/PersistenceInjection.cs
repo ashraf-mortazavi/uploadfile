@@ -1,3 +1,4 @@
+using CsvFileUploadApp.Application.Configurations;
 using CsvFileUploadApp.Infrastructure.Consumers;
 using CsvFileUploadApp.Infrastructure.Persistence;
 using MassTransit;

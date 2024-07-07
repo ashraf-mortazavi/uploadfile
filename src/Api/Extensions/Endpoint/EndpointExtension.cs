@@ -1,7 +1,7 @@
 using CsvFileUploadApp.Application.Operations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CsvFileUploadApp.Api.Endpoints.Extensions;
+namespace CsvFileUploadApp.Api.Extensions.Endpoint;
 
 public static class EndpointExtension
 {

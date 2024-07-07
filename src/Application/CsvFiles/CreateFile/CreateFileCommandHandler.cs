@@ -47,6 +47,7 @@ public sealed class CreateFileCommandHandler(AppDbContext dbContext)
         catch (Exception e) 
         {
             Console.WriteLine(e.Message);
+            return new OperationResult(OperationResultStatus.Ok, value: "Can not Insert Duplicate Code!");
         }
         
         return new OperationResult(OperationResultStatus.Ok, value: files);

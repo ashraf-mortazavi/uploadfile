@@ -5,26 +5,32 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CsvFileUploadApp.Infrastructure.Consumers;
 
-public class PublishUploadedFileFromConsumer(AppDbContext dbContext, [FromServices] IPublishEndpoint publishEndpoint) : IConsumer<CreateFileEvent>
+public class PublishUploadedFileFromConsumer(AppDbContext dbContext, [FromServices] IPublishEndpoint publishEndpoint)
+    : IConsumer<CreateFileEventFromFirstQueue>
 {
-
-    public async Task Consume(ConsumeContext<CreateFileEvent> context)
+    public async Task Consume(ConsumeContext<CreateFileEventFromFirstQueue> context)
     {
         var message = context.Message;
 
         if (message is null) return;
-        
+    
         try
         {
-            using (var memoryStream = new MemoryStream(message.Content))
+            if (context.Message.isReady)
             {
-                await publishEndpoint.Publish(new CreateFileEvent(
-                    FileName: message.FileName,
-                    ContentType: message.ContentType,
-                    Content: memoryStream.ToArray()));
-            }
+                using (var memoryStream = new MemoryStream(message.Content))
+                {
+                    await publishEndpoint.Publish(new CreateFileEventFromFirstQueue
+                    {
+                        FileName = message.FileName,
+                        ContentType =message.ContentType,
+                        Content = memoryStream.ToArray(),
+                        isReady =context.Message.isReady= false
+                    });
+                }
 
-            Console.WriteLine("File published successfully!");
+            }
+            Console.WriteLine("File published From First Queue successfully!");
         }
         catch (Exception e)
         {

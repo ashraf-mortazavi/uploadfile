@@ -30,4 +30,23 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="src\Api\obj\CsvFileUploadApp.Api.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="src\Api\obj\Debug\net8.0\CsvFileUploadApp.Api.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="src\Api\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="src\Api\bin\Debug\net8.0\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="src\Api\bin\Debug\net8.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="src\Api\bin\Debug\net8.0\CsvFileUploadApp.Api.deps.json" />
+      <_ContentIncludedByDefault Remove="src\Api\bin\Debug\net8.0\CsvFileUploadApp.Api.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="src\Domain\obj\CsvFileUploadApp.Domain.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="src\Domain\obj\Debug\net8.0\CsvFileUploadApp.Domain.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="src\Domain\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="src\Application\obj\CsvFileUploadApp.Application.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="src\Application\obj\Debug\net8.0\CsvFileUploadApp.Application.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="src\Application\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="src\Infrastructure\obj\CsvFileUploadApp.Infrastructure.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="src\Infrastructure\obj\Debug\net8.0\CsvFileUploadApp.Infrastructure.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="src\Infrastructure\obj\project.assets.json" />
+    </ItemGroup>
+
 </Project>

@@ -8,18 +8,13 @@ namespace CsvFileUploadApp.Application.CsvFiles.GetFiles;
 public class GetFileByCodeQueryHandler(AppDbContext appDbContext)
     : IRequestHandler<GetFileByCodeQuery, OperationResult>
 {
-    
     public async Task<OperationResult> Handle(GetFileByCodeQuery request, CancellationToken cancellationToken)
     {
         var file = await appDbContext.Files
             .AsNoTracking()
-            .SingleOrDefaultAsync(x => x.Code == request.Code, cancellationToken: cancellationToken);
+            .FirstOrDefaultAsync(x => x.Code == request.Code, cancellationToken: cancellationToken);
 
-        if (file is null)
-        {
-            return new OperationResult(OperationResultStatus.NotFound, value: "File Not Found");
-        }
-
-        return new OperationResult(OperationResultStatus.Ok, value: file);
+        return file is null ? new OperationResult(OperationResultStatus.NotFound, value: "File Not Found")
+            : new OperationResult(OperationResultStatus.Ok, value: file);
     }
 }

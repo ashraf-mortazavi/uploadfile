@@ -1,6 +1,6 @@
 using CsvFileUploadApp.Application.Operations;
 using MediatR;
 
-namespace CsvFileUploadApp;
+namespace CsvFileUploadApp.Application.CsvFiles.DeleteFile;
 
 public record DeleteFileCommand() : IRequest<OperationResult>;

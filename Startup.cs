@@ -1,9 +1,6 @@
 using System.Reflection;
 using CsvFileUploadApp.Api.Extensions.Middleware;
 using CsvFileUploadApp.Infrastructure.Extentions.DependencyInjections;
-using CsvFileUploadApp.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace CsvFileUploadApp;
 

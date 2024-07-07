@@ -41,10 +41,11 @@ public class CreateFileEventConsumer(AppDbContext dbContext) : IConsumer<CreateF
 
             dbContext.Files.AddRange(files);
             await dbContext.SaveChangesAsync();
+            Console.WriteLine("Data Insert successfully!");
         }
         catch (DbUpdateException e)
         {
-            Console.WriteLine("Data is duplicated!" + e.Message);
+            Console.WriteLine("Code can not be duplicated!");
             throw;
         }
         catch (Exception e)

@@ -1,4 +1,4 @@
-namespace CsvFileUploadApp;
+namespace CsvFileUploadApp.Application.Configurations;
 
 public sealed class RabbitConfig
 {

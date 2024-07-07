@@ -1,4 +1,4 @@
-using CsvFileUploadApp.Api.Endpoints.Extensions;
+using CsvFileUploadApp.Api.Extensions.Endpoint;
 using CsvFileUploadApp.Application.CsvFiles.CreateFile;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

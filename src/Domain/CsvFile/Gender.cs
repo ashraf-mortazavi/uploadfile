@@ -1,4 +1,4 @@
-namespace CsvFileUploadApp;
+namespace CsvFileUploadApp.Domain.CsvFile;
 
 public enum Gender
 {
